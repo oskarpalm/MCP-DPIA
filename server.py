@@ -20,6 +20,7 @@ load_dotenv()
 
 MCP_PORT = int(os.environ.get("MCP_PORT", "80"))
 MCP_PUBLIC_URL = os.environ.get("MCP_PUBLIC_URL", f"http://localhost:{MCP_PORT}")
+VM_IP = os.environ.get("VM_IP")
 
 mcp = FastMCP(
     "DPIA Document Store",
@@ -412,4 +413,4 @@ def generate_docx() -> str:
 
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run(app, host="0.0.0.0", port=MCP_PORT)
+    uvicorn.run(app, host=VM_IP, port=MCP_PORT)
