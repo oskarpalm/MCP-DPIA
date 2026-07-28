@@ -1,5 +1,4 @@
-mcp[cli]
-fastmcp
+mcp[cli]==1.28.1
 python-docx
 openpyxl
 uvicorn
